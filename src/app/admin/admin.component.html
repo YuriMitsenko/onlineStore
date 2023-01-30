@@ -1,0 +1,30 @@
+<p>Администрирование</p>
+<div>
+    Сортировать корзины
+    C <input type="date" #dateStart (change)="chooseStartDate(dateStart)">
+    По <input type="date" #dateEnd (change)="chooseEndDate(dateEnd)">
+    <button (click)="showSort()">Ok</button>
+</div>
+
+<p>Стоимость всех корзин: {{totalPriceAll}}$</p>
+
+<div class="carts" *ngFor="let cart of carts">
+    <div class="cart">
+        <div>Номер корзины: {{cart.id}}</div>
+        <div>Пользователь: {{cart.userId}}</div>
+        <div>Дата создания: {{cart.date | date:'MMMM d, y'}}</div>
+        <div>Стоимость корзины: {{cart.totalpriceCart | number: '1.2-2'}}$</div>
+        <input type="button" value="Подробнее о товаре в корзине" (click)="show(cart.id)">
+    </div>
+    <div  *ngFor="let product of cart.products">
+        <div [ngSwitch]="idCart" >
+            <div *ngSwitchCase="cart.id" class="productsCart">
+                <p> Id товара: {{product.productId }} </p>
+                <p> товар:{{product.title}}</p>
+                <p> Кол-во: {{product.quantity }}</p>
+                <p>{{product.price | number: '1.2-2'}}$</p>
+            </div>
+            <div *ngSwitchDefault></div>
+        </div>
+    </div>
+</div>

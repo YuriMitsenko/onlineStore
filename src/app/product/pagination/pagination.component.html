@@ -1,0 +1,3 @@
+<div class="pagination">
+<button *ngFor="let currentPage of pagesArray let i = index " [class] = "currentPage" (click)="getPage(i)">{{i+1}}</button>
+</div>

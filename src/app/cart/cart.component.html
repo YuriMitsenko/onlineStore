@@ -1,0 +1,26 @@
+<div class="totalPriceAll">
+<div>Дата заказа: {{cart.date | date:'MMMM d, y'}}</div>
+<div *ngIf="!display">Всего сумма заказа: {{totalPriceAll | number: '1.2-2' }}$ </div>
+</div>
+<div *ngIf="!display">
+  <div class="productsCart" *ngFor="let product of cart.products; let i = index">
+    <div> {{i+1 +")" }}Наименование товара: {{ product.title }} </div>
+    <div>Цена за шт:{{product.price}}$</div>
+    <div> Кол-во:
+      <button (click)="increment(product)">+</button>
+      {{product.quantity}}
+      <button (click)="decrement(product)">-</button>
+      <div >Всего продукта:{{product.totalprice | number: '1.2-2'}}$</div>
+      <button (click)="delProduct(i, product.totalprice)">удалить товар</button>
+    </div>
+  </div>
+</div>
+<button (click)="makeOrder(cart)" (click)="display = !display" *ngIf="!display">Отправить заказ</button>
+<div *ngIf="display">
+  <h3>Ваш заказ на сумму{{totalPriceAll | number: '1.2-2' }}$ принят в работу, мы Вам перезвоним</h3>
+  <div class="productCartPost" *ngFor="let productOrder of cartOrder.products">
+    <div>Товар:{{productOrder.title}}</div>
+    <div>в количестве {{productOrder.quantity}} шт.</div>
+
+  </div>
+</div>

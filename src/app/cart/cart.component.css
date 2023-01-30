@@ -1,0 +1,21 @@
+.productsCart  {
+    border: 1px solid grey;
+    background-color: lightgrey;
+    padding: 10px;
+
+
+}
+.productCartPost{
+  border: 1px solid grey;
+  background-color:aquamarine;
+  padding: 10px;
+}
+
+.totalPriceAll{
+  border: 1px solid grey;
+  background-color: lightgrey;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+
+}

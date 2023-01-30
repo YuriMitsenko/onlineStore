@@ -1,0 +1,11 @@
+<button (click)="goBack()">Назад</button>
+
+<div class="productElem">
+  <h1>{{product.title}}</h1>
+  <p>{{product.category}}</p>
+  <img src="{{product.image}}" />
+  <p>{{"Цена: " + product.price +"$"}}</p>
+  <p>{{"Описание продукта: " + product.description}}</p>
+  <p>{{"Рейтинг: " +product.rating?.rate}} {{"Кол-во голосов: "+ product.rating?.count}}</p>
+  <button (click)="addProductCart(product)">Добавить в корзину</button>
+</div>

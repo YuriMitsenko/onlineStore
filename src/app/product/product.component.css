@@ -1,0 +1,14 @@
+.productElem {
+    border: 1px solid grey;
+    background-color: lightgrey;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+img {
+    height: 150px;
+}
+
+.conteiner {
+    display: flex;
+}

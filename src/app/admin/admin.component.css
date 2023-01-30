@@ -1,0 +1,15 @@
+.carts {
+    border: 1px solid grey;
+    background-color: lightgrey;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: block;
+
+}
+
+.productsCart{
+ display: flex;
+ background-color:aquamarine;
+ margin-left: 10px;
+ border: 1px solid grey;
+}

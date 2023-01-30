@@ -1,0 +1,31 @@
+<div class="conteiner">
+
+  <select class="form-select" (change)="setCategory($event)">
+    <option selected>Откройте для выбора категории продукта </option>
+    <option value="men's clothing">men's clothing / мужская одежда</option>
+    <option value="women's clothing">women's clothing / женская одежда</option>
+    <option value="jewelery">jewelery / украшения</option>
+    <option value="electronics">electronics / электроника</option>
+    <option value="start">Bce категории</option>
+  </select>
+
+  <div class="inputs">
+    <!-- <p>Сортировать товар по цене</p> -->
+    <input type="radio" name="sort" value="priceUp" (change)="setSortUp()">
+    <label for="">От дешевых к дорогим</label>
+    <input type="radio" name="sort" value="priceDown" (change)="setSortDown()">
+    <label for="">От дорогих к дешевым</label>
+  </div>
+
+</div>
+<br>
+
+<div class="productElem" *ngFor="let product of arrayProductPage; let i = index; ">
+  <h1>{{product.title}}</h1>
+  <div>Цена: {{product.price}} $</div>
+  <div>
+    <button (click)="setDescription(product.id)">Полная информация o товаре</button>
+  </div>
+  <button (click)="addProductCart(product)">Добавить в корзину</button>
+</div>
+<app-pagination [page]="amountPage" (newItemEvent)="getNumbPage($event)"></app-pagination>
